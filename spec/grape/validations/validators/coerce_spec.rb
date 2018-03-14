@@ -119,7 +119,7 @@ describe Grape::Validations::CoerceValidator do
 
         get '/int', int: '45'
         expect(last_response.status).to eq(200)
-        expect(last_response.body).to eq('Fixnum')
+        expect(last_response.body).to eq('Integer')
       end
 
       context 'Array' do
@@ -133,7 +133,7 @@ describe Grape::Validations::CoerceValidator do
 
           get '/array', arry: %w(1 2 3)
           expect(last_response.status).to eq(200)
-          expect(last_response.body).to eq('Fixnum')
+          expect(last_response.body).to eq('Integer')
         end
 
         it 'Array of Bools' do
@@ -182,7 +182,7 @@ describe Grape::Validations::CoerceValidator do
 
           get '/set', set: Set.new([1, 2, 3, 4]).to_a
           expect(last_response.status).to eq(200)
-          expect(last_response.body).to eq('Fixnum')
+          expect(last_response.body).to eq('Integer')
         end
 
         it 'Set of Bools' do
@@ -249,7 +249,7 @@ describe Grape::Validations::CoerceValidator do
 
         get '/int', integers: { int: '45' }
         expect(last_response.status).to eq(200)
-        expect(last_response.body).to eq('Fixnum')
+        expect(last_response.body).to eq('Integer')
       end
     end
   end

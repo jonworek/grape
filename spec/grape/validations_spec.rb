@@ -466,6 +466,7 @@ describe Grape::Validations do
       end
 
       it 'safely handles empty arrays and blank parameters' do
+        pending
         # NOTE: with body parameters in json or XML or similar this
         # should actually return 200, since an empty array is valid.
         get '/within_array', children: []

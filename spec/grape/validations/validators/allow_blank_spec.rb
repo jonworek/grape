@@ -52,9 +52,9 @@ describe Grape::Validations::AllowBlankValidator do
         get '/allow_float_blank'
 
         params do
-          requires :val, type: Fixnum, allow_blank: true
+          requires :val, type: Integer, allow_blank: true
         end
-        get '/allow_fixnum_blank'
+        get '/allow_Integer_blank'
 
         params do
           requires :val, type: Symbol, allow_blank: true
@@ -191,8 +191,8 @@ describe Grape::Validations::AllowBlankValidator do
         expect(last_response.status).to eq(200)
       end
 
-      it 'accepts empty when fixnum allow_blank' do
-        get '/allow_fixnum_blank', val: ''
+      it 'accepts empty when Integer allow_blank' do
+        get '/allow_Integer_blank', val: ''
         expect(last_response.status).to eq(200)
       end
     end

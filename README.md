@@ -2330,7 +2330,7 @@ end
 The behaviour is then:
 
 ```bash
-GET /123        # 'Fixnum'
+GET /123        # 'Integer'
 GET /foo        # 400 error - 'blah is invalid'
 ```
 
